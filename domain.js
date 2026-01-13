@@ -9,6 +9,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Kiểm tra xem có cấu hình phạm vi không (ưu tiên biến global, sau đó đến attribute)
     // Nếu không có thì mặc định là document (toàn trang)
     const scopeSelector = window.DOMAIN_IMPORT_SCOPE || scriptScope;
+    console.log('Domain Import: Running with scope:', scopeSelector || 'Global (All Document)');
+
     // Hỗ trợ nhiều selector (ví dụ: '.post-body, .localButtonWrap') hoặc mặc định là document
     const roots = scopeSelector ? document.querySelectorAll(scopeSelector) : [document];
 
